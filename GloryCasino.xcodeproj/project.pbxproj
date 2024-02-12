@@ -11,6 +11,7 @@
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
 		AC9D32D42B7919080018ABF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D32B7919080018ABF1 /* Preview Assets.xcassets */; };
+		AC9D32DC2B7927040018ABF1 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32DB2B7927040018ABF1 /* Text.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC9D32D02B7919070018ABF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC9D32D32B7919080018ABF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC9D32DB2B7927040018ABF1 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */,
 				AC9D32CE2B7919050018ABF1 /* ContentView.swift */,
+				AC9D32DA2B7926F70018ABF1 /* Resources */,
 				AC9D32D02B7919070018ABF1 /* Assets.xcassets */,
 				AC9D32D22B7919080018ABF1 /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				AC9D32D32B7919080018ABF1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC9D32DA2B7926F70018ABF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC9D32DB2B7927040018ABF1 /* Text.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */,
+				AC9D32DC2B7927040018ABF1 /* Text.swift in Sources */,
 				AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

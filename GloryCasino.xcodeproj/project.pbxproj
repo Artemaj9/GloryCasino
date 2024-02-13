@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2FCC842B7C0E1D00A1A526 /* BackStartStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC832B7C0E1D00A1A526 /* BackStartStack.swift */; };
+		AC2FCC862B7C0F8400A1A526 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC852B7C0F8400A1A526 /* WelcomeView.swift */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -19,9 +21,12 @@
 		AC9D32EB2B7AAD6E0018ABF1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32EA2B7AAD6E0018ABF1 /* Fonts.swift */; };
 		AC9D32EE2B7AAF280018ABF1 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32ED2B7AAF280018ABF1 /* Inter-SemiBold.ttf */; };
 		AC9D32F02B7AAF550018ABF1 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32EF2B7AAF550018ABF1 /* Inter-Black.ttf */; };
+		AC9D32F32B7AC28E0018ABF1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32F22B7AC28E0018ABF1 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC2FCC832B7C0E1D00A1A526 /* BackStartStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackStartStack.swift; sourceTree = "<group>"; };
+		AC2FCC852B7C0F8400A1A526 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		AC9D32ED2B7AAF280018ABF1 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		AC9D32EF2B7AAF550018ABF1 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		AC9D32F12B7AAF6D0018ABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC9D32F22B7AC28E0018ABF1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				AC9D32DF2B7AA0060018ABF1 /* BackgroundView.swift */,
+				AC2FCC832B7C0E1D00A1A526 /* BackStartStack.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -111,7 +118,9 @@
 		AC9D32E42B7AAA650018ABF1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC9D32F22B7AC28E0018ABF1 /* MenuView.swift */,
 				AC9D32E52B7AAA780018ABF1 /* InfoView.swift */,
+				AC2FCC852B7C0F8400A1A526 /* WelcomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -209,9 +218,12 @@
 				AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */,
 				AC9D32E92B7AACE00018ABF1 /* Image+ext.swift in Sources */,
 				AC9D32E32B7AA34A0018ABF1 /* Colors.swift in Sources */,
+				AC9D32F32B7AC28E0018ABF1 /* MenuView.swift in Sources */,
 				AC9D32DC2B7927040018ABF1 /* Text.swift in Sources */,
+				AC2FCC862B7C0F8400A1A526 /* WelcomeView.swift in Sources */,
 				AC9D32E02B7AA0060018ABF1 /* BackgroundView.swift in Sources */,
 				AC9D32E62B7AAA780018ABF1 /* InfoView.swift in Sources */,
+				AC2FCC842B7C0E1D00A1A526 /* BackStartStack.swift in Sources */,
 				AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

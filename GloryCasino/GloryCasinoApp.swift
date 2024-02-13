@@ -11,7 +11,7 @@ import SwiftUI
 struct GloryCasinoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MenuView()
         }
     }
 }

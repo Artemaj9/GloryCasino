@@ -33,7 +33,6 @@ struct MenuView: View {
                                 .frame(height: 45)
                         }
 
-                     
                         Image("balancebar")
                             .resizableToFit()
                             .frame(height: 60)
@@ -42,19 +41,23 @@ struct MenuView: View {
                                     .foregroundStyle(.white)
                                     .font(.custom(.black, size: 24))
                             }
+                        
                         Image("cup")
                             .resizableToFit()
                             .frame(height: 45)
                     }
+                    
                     Image("logo1")
                         .resizableToFit()
                         .frame(width: size.width * 0.4)
+                    
                     HStack {
                         Spacer()
                         Image("winchance1")
                             .resizableToFit()
                             .frame(height: 70)
                     }
+                    
                     HStack {
                         Spacer()
                         Image("label1")

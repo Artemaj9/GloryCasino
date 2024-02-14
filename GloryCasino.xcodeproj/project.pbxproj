@@ -16,6 +16,7 @@
 		AC2FCC902B7D215900A1A526 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC8F2B7D215800A1A526 /* GameLogic.swift */; };
 		AC2FCC932B7D664400A1A526 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC922B7D664400A1A526 /* SplashView.swift */; };
 		AC2FCC952B7D6B3700A1A526 /* EndGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */; };
+		AC2FCC982B7D7E2400A1A526 /* EarthQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		AC2FCC8F2B7D215800A1A526 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		AC2FCC922B7D664400A1A526 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameModel.swift; sourceTree = "<group>"; };
+		AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuest.swift; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 				AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AC2FCC962B7D7C3C00A1A526 /* Quest */ = {
+			isa = PBXGroup;
+			children = (
+				AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */,
+			);
+			path = Quest;
 			sourceTree = "<group>";
 		};
 		AC9D32C02B7919050018ABF1 = {
@@ -150,6 +160,7 @@
 				AC2FCC872B7C25DF00A1A526 /* GameView.swift */,
 				AC2FCC8B2B7CE89800A1A526 /* LuminanceToAlpha.swift */,
 				AC2FCC8D2B7CEA9200A1A526 /* EndGameView.swift */,
+				AC2FCC962B7D7C3C00A1A526 /* Quest */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */,
 				AC2FCC932B7D664400A1A526 /* SplashView.swift in Sources */,
 				AC2FCC902B7D215900A1A526 /* GameLogic.swift in Sources */,
+				AC2FCC982B7D7E2400A1A526 /* EarthQuest.swift in Sources */,
 				AC2FCC8A2B7C2BC100A1A526 /* PauseView.swift in Sources */,
 				AC9D32E92B7AACE00018ABF1 /* Image+ext.swift in Sources */,
 				AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */,

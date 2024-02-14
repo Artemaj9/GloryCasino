@@ -5,24 +5,29 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State var screen = 4
+    @EnvironmentObject var vm: GameLogic
+    
     var body: some View {
         ZStack {
           
-            Image("welcomebg\(screen)")
+            Image("welcomebg\(vm.element)")
                .resizable()
                .scaledToFill()
                .scaleEffect(1.005)
             
          
-            BackStartStack(screen: $screen)
+            BackStartStack()
+                .environmentObject(vm)
                 .padding(.bottom, 24)
                 
         }
         .ignoresSafeArea()
+        .preferredColorScheme(.dark)
+        .navigationBarHidden(true)
     }
 }
 
 #Preview {
     WelcomeView()
+        .environmentObject(GameLogic())
 }

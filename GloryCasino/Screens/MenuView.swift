@@ -5,11 +5,14 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @EnvironmentObject var vm: GameLogic
     @State var size: CGSize = .zero
+    
     var body: some View {
         NavigationView {
             ZStack {
-                Image("menubg1")
+                Image("menubg\(vm.element)")
                     .resizable()
                     .scaledToFill()
                     .overlay {
@@ -47,32 +50,34 @@ struct MenuView: View {
                             .frame(height: 45)
                     }
                     
-                    Image("logo1")
+                    Image("logo\(vm.element)")
                         .resizableToFit()
                         .frame(width: size.width * 0.4)
                     
                     HStack {
                         Spacer()
-                        Image("winchance1")
+                        Image("winchance\(vm.element)")
                             .resizableToFit()
                             .frame(height: 70)
                     }
                     
                     HStack {
                         Spacer()
-                        Image("label1")
+                        Image("label\(vm.element)")
                             .resizableToFit()
                             .frame(height: 40)
                     }
                     HStack {
                         Spacer()
-                        Image("text1")
+                        Image("text\(vm.element)")
                             .resizableToFit()
                             .frame(height: 15)
                     }
                     
                     //  Spacer()
-                    Button {
+                    NavigationLink {
+                        WelcomeView()
+                            .environmentObject(vm)
                     } label: {
                         Image("greenbtnbg")
                             .resizableToFit()
@@ -109,4 +114,5 @@ struct MenuView: View {
 
 #Preview {
     MenuView()
+        .environmentObject(GameLogic())
 }

@@ -5,24 +5,24 @@
 import SwiftUI
 
 struct BackStartStack: View {
+    @EnvironmentObject var vm: GameLogic
     
-    @Binding var screen: Int
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
             
-            Image("welcometxtbg\(screen)")
+            Image("welcometxtbg\(vm.element)")
                 .resizableToFit()
                 .overlay {
                  
-                        Text(welcomeTxt[screen - 1])
+                    Text(welcomeTxt[vm.element - 1])
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 24)
                             .foregroundStyle(
-                                screen == 1 ? Pallete.brownEarth :
-                                    screen == 4 ? Pallete.brownAir : .white)
+                                vm.element == 1 ? Pallete.brownEarth :
+                                    vm.element == 4 ? Pallete.brownAir : .white)
 
-                            .font(.custom(.semiBold, size: screen == 2 ? 20 : screen == 3 ? 19 : 18))
+                            .font(.custom(.semiBold, size: vm.element == 2 ? 20 : vm.element == 3 ? 19 : 18))
                 
                 
                 }
@@ -66,5 +66,6 @@ struct BackStartStack: View {
 }
 
 #Preview {
-    BackStartStack(screen: .constant(4))
+    BackStartStack()
+        .environmentObject(GameLogic())
 }

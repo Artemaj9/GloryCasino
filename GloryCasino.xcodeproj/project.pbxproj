@@ -11,6 +11,11 @@
 		AC2FCC862B7C0F8400A1A526 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC852B7C0F8400A1A526 /* WelcomeView.swift */; };
 		AC2FCC882B7C25DF00A1A526 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC872B7C25DF00A1A526 /* GameView.swift */; };
 		AC2FCC8A2B7C2BC100A1A526 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC892B7C2BC100A1A526 /* PauseView.swift */; };
+		AC2FCC8C2B7CE89800A1A526 /* LuminanceToAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC8B2B7CE89800A1A526 /* LuminanceToAlpha.swift */; };
+		AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC8D2B7CEA9200A1A526 /* EndGameView.swift */; };
+		AC2FCC902B7D215900A1A526 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC8F2B7D215800A1A526 /* GameLogic.swift */; };
+		AC2FCC932B7D664400A1A526 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC922B7D664400A1A526 /* SplashView.swift */; };
+		AC2FCC952B7D6B3700A1A526 /* EndGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -31,6 +36,11 @@
 		AC2FCC852B7C0F8400A1A526 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		AC2FCC872B7C25DF00A1A526 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AC2FCC892B7C2BC100A1A526 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		AC2FCC8B2B7CE89800A1A526 /* LuminanceToAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminanceToAlpha.swift; sourceTree = "<group>"; };
+		AC2FCC8D2B7CEA9200A1A526 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
+		AC2FCC8F2B7D215800A1A526 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		AC2FCC922B7D664400A1A526 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameModel.swift; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC2FCC912B7D5EE700A1A526 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AC9D32C02B7919050018ABF1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +99,10 @@
 				AC9D32F12B7AAF6D0018ABF1 /* Info.plist */,
 				AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */,
 				AC9D32CE2B7919050018ABF1 /* ContentView.swift */,
+				AC2FCC8F2B7D215800A1A526 /* GameLogic.swift */,
 				AC9D32E42B7AAA650018ABF1 /* Screens */,
 				AC9D32E12B7AA00A0018ABF1 /* Components */,
+				AC2FCC912B7D5EE700A1A526 /* Model */,
 				AC9D32DA2B7926F70018ABF1 /* Resources */,
 				AC9D32E72B7AACC20018ABF1 /* Extensions */,
 				AC9D32D02B7919070018ABF1 /* Assets.xcassets */,
@@ -123,10 +143,13 @@
 		AC9D32E42B7AAA650018ABF1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC2FCC922B7D664400A1A526 /* SplashView.swift */,
 				AC9D32F22B7AC28E0018ABF1 /* MenuView.swift */,
 				AC9D32E52B7AAA780018ABF1 /* InfoView.swift */,
 				AC2FCC852B7C0F8400A1A526 /* WelcomeView.swift */,
 				AC2FCC872B7C25DF00A1A526 /* GameView.swift */,
+				AC2FCC8B2B7CE89800A1A526 /* LuminanceToAlpha.swift */,
+				AC2FCC8D2B7CEA9200A1A526 /* EndGameView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -222,9 +245,14 @@
 			files = (
 				AC9D32EB2B7AAD6E0018ABF1 /* Fonts.swift in Sources */,
 				AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */,
+				AC2FCC932B7D664400A1A526 /* SplashView.swift in Sources */,
+				AC2FCC902B7D215900A1A526 /* GameLogic.swift in Sources */,
 				AC2FCC8A2B7C2BC100A1A526 /* PauseView.swift in Sources */,
 				AC9D32E92B7AACE00018ABF1 /* Image+ext.swift in Sources */,
+				AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */,
+				AC2FCC8C2B7CE89800A1A526 /* LuminanceToAlpha.swift in Sources */,
 				AC9D32E32B7AA34A0018ABF1 /* Colors.swift in Sources */,
+				AC2FCC952B7D6B3700A1A526 /* EndGameModel.swift in Sources */,
 				AC9D32F32B7AC28E0018ABF1 /* MenuView.swift in Sources */,
 				AC9D32DC2B7927040018ABF1 /* Text.swift in Sources */,
 				AC2FCC862B7C0F8400A1A526 /* WelcomeView.swift in Sources */,

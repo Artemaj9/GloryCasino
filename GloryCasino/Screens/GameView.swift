@@ -77,8 +77,8 @@ struct GameView: View {
                                      .offset(y: -35)
                                      .offset(y: -9000)
                                      .offset(y: newPosition)
-                                    
                             }
+                        
                         ScrollView(showsIndicators: false) {
                                     VStack(spacing: 0) {
                                         ForEach(1..<212) { i in

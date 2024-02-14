@@ -7,6 +7,7 @@ import SwiftUI
 struct BackgroundView: View {
     @State var radius: CGFloat = 10
     @State var opacity: Double = 0
+    @State var size: CGSize = .zero
     
     var body: some View {
         ZStack {

@@ -18,6 +18,8 @@
 		AC2FCC952B7D6B3700A1A526 /* EndGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */; };
 		AC2FCC982B7D7E2400A1A526 /* EarthQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */; };
 		AC2FCC9A2B7D8D9000A1A526 /* FireQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC992B7D8D9000A1A526 /* FireQuest.swift */; };
+		AC2FCC9C2B7DEEB500A1A526 /* WaterQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */; };
+		AC2FCC9E2B7DF6BD00A1A526 /* WaterItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameModel.swift; sourceTree = "<group>"; };
 		AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuest.swift; sourceTree = "<group>"; };
 		AC2FCC992B7D8D9000A1A526 /* FireQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireQuest.swift; sourceTree = "<group>"; };
+		AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQuest.swift; sourceTree = "<group>"; };
+		AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterItems.swift; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */,
+				AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 			children = (
 				AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */,
 				AC2FCC992B7D8D9000A1A526 /* FireQuest.swift */,
+				AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */,
 			);
 			path = Quest;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9D32EB2B7AAD6E0018ABF1 /* Fonts.swift in Sources */,
+				AC2FCC9E2B7DF6BD00A1A526 /* WaterItems.swift in Sources */,
+				AC2FCC9C2B7DEEB500A1A526 /* WaterQuest.swift in Sources */,
 				AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */,
 				AC2FCC932B7D664400A1A526 /* SplashView.swift in Sources */,
 				AC2FCC902B7D215900A1A526 /* GameLogic.swift in Sources */,

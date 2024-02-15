@@ -7,19 +7,30 @@
 
 import Foundation
 
-struct WItemGeometry {
+struct ItemGeometry {
     let width: CGFloat
     let xCoef: CGFloat
     let yCoef: CGFloat
 }
 
 let wGeo = [
-    WItemGeometry(width: 0.25, xCoef: 0, yCoef: -0.12),
-    WItemGeometry(width: 0.25, xCoef: 0.25, yCoef: -0.09),
-    WItemGeometry(width: 0.25, xCoef: -0.25, yCoef: -0.1),
-    WItemGeometry(width: 0.23, xCoef: -0.25, yCoef: 0.01),
-    WItemGeometry(width: 0.25, xCoef: 0.25, yCoef: 0.01),
-    WItemGeometry(width: 0.29, xCoef: -0.17, yCoef: 0.12),
-    WItemGeometry(width: 0.266, xCoef: 0.17, yCoef: 0.12),
-    WItemGeometry(width: 0.26, xCoef: 0, yCoef: 0)
+    ItemGeometry(width: 0.25, xCoef: 0, yCoef: -0.12),
+    ItemGeometry(width: 0.25, xCoef: 0.25, yCoef: -0.09),
+    ItemGeometry(width: 0.25, xCoef: -0.25, yCoef: -0.1),
+    ItemGeometry(width: 0.23, xCoef: -0.25, yCoef: 0.01),
+    ItemGeometry(width: 0.25, xCoef: 0.25, yCoef: 0.01),
+    ItemGeometry(width: 0.29, xCoef: -0.17, yCoef: 0.12),
+    ItemGeometry(width: 0.266, xCoef: 0.17, yCoef: 0.12),
+    ItemGeometry(width: 0.26, xCoef: 0, yCoef: 0)
+]
+
+let aGeo = [
+    ItemGeometry(width: 0.16, xCoef: -0.32, yCoef: -0.2),
+    ItemGeometry(width: 0.16, xCoef: 0.32, yCoef: -0.2),
+    ItemGeometry(width: 0.16, xCoef: 0, yCoef: -0.12),
+    ItemGeometry(width: 0.16, xCoef: 0.32, yCoef: 0),
+    ItemGeometry(width: 0.16, xCoef: -0.32, yCoef: 0),
+    ItemGeometry(width: 0.16, xCoef: -0.32, yCoef: 0.2),
+    ItemGeometry(width: 0.16, xCoef: 0, yCoef: 0.09),
+    ItemGeometry(width: 0.16, xCoef: 0.32, yCoef: 0.2),
 ]

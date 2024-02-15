@@ -20,6 +20,7 @@
 		AC2FCC9A2B7D8D9000A1A526 /* FireQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC992B7D8D9000A1A526 /* FireQuest.swift */; };
 		AC2FCC9C2B7DEEB500A1A526 /* WaterQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */; };
 		AC2FCC9E2B7DF6BD00A1A526 /* WaterItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */; };
+		AC2FCCA02B7E3B8F00A1A526 /* AirQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9F2B7E3B8F00A1A526 /* AirQuest.swift */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		AC2FCC992B7D8D9000A1A526 /* FireQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireQuest.swift; sourceTree = "<group>"; };
 		AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQuest.swift; sourceTree = "<group>"; };
 		AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterItems.swift; sourceTree = "<group>"; };
+		AC2FCC9F2B7E3B8F00A1A526 /* AirQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQuest.swift; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				AC2FCC972B7D7E2400A1A526 /* EarthQuest.swift */,
 				AC2FCC992B7D8D9000A1A526 /* FireQuest.swift */,
 				AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */,
+				AC2FCC9F2B7E3B8F00A1A526 /* AirQuest.swift */,
 			);
 			path = Quest;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */,
 				AC2FCC8C2B7CE89800A1A526 /* LuminanceToAlpha.swift in Sources */,
 				AC9D32E32B7AA34A0018ABF1 /* Colors.swift in Sources */,
+				AC2FCCA02B7E3B8F00A1A526 /* AirQuest.swift in Sources */,
 				AC2FCC952B7D6B3700A1A526 /* EndGameModel.swift in Sources */,
 				AC9D32F32B7AC28E0018ABF1 /* MenuView.swift in Sources */,
 				AC9D32DC2B7927040018ABF1 /* Text.swift in Sources */,

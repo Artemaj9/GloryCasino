@@ -6,6 +6,7 @@ import SwiftUI
 
 struct BackStartStack: View {
     @EnvironmentObject var vm: GameLogic
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack(spacing: 0) {
@@ -29,6 +30,7 @@ struct BackStartStack: View {
             
             HStack {
                 Button {
+                    dismiss()
                 } label: {
                     Image("bluebtnbg")
                         .resizableToFit()

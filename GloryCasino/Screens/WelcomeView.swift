@@ -21,7 +21,8 @@ struct WelcomeView: View {
         .ignoresSafeArea()
         .preferredColorScheme(.dark)
         .navigationBarHidden(true)
-    }    
+    }
+    
 }
 
 #Preview {

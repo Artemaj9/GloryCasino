@@ -40,14 +40,20 @@ struct MenuView: View {
                             .resizableToFit()
                             .frame(height: 60)
                             .overlay {
-                                Text("5000")
+                                Text("\(vm.balance)")
                                     .foregroundStyle(.white)
                                     .font(.custom(.black, size: 24))
                             }
                         
-                        Image("cup")
-                            .resizableToFit()
-                            .frame(height: 45)
+                        NavigationLink {
+                            ChestView()
+                                .environmentObject(vm)
+                        } label: {
+                            Image("cup")
+                                .resizableToFit()
+                                .frame(height: 45)
+                        }
+                     
                     }
                     
                     Image("logo\(vm.element)")
@@ -91,18 +97,78 @@ struct MenuView: View {
                                     .shadow(color: .black.opacity(0.25), radius: 1)
                             }
                     }
-                    Image("earthbtn")
-                        .resizableToFit()
-                        .padding(.horizontal, 24)
-                    Image("firebtn")
-                        .resizableToFit()
-                        .padding(.horizontal, 24)
-                    Image("waterbtn")
-                        .resizableToFit()
-                        .padding(.horizontal, 24)
-                    Image("airbtn")
-                        .resizableToFit()
-                        .padding(.horizontal, 24)
+                    
+                    Button {
+                        withAnimation {
+                            vm.element = 1
+                        }
+                   
+                    } label: {
+                        ZStack {
+                            Image("dbtn1")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 1 ? 0 : 1)
+                            Image("abtn1")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 1 ? 1 : 0)
+                        }
+                    }
+
+                    Button {
+                        withAnimation {
+                            vm.element = 2
+                        }
+                  
+                    } label: {
+                        ZStack {
+                            Image("dbtn2")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 2 ? 0 : 1)
+                            Image("abtn2")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 2 ? 1 : 0)
+                        }
+                    }
+                 
+                    Button {
+                        withAnimation {
+                            vm.element = 3
+                        }
+                    } label: {
+                        ZStack {
+                            Image("dbtn3")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 3 ? 0 : 1)
+                            Image("abtn3")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 3 ? 1 : 0)
+                        }
+                    }
+               
+                    Button {
+                        withAnimation {
+                            vm.element = 4
+                        }
+                    } label: {
+                        ZStack {
+                            Image("dbtn4")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                            
+                            Image("abtn4")
+                                .resizableToFit()
+                                .padding(.horizontal, 24)
+                                .opacity(vm.element == 4 ? 1 : 0)
+      
+                        }
+                    }
+
                 }
                 .padding(.bottom, 24)
             }

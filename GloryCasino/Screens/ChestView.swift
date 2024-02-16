@@ -6,6 +6,8 @@ import SwiftUI
 
 struct ChestView: View {
     @EnvironmentObject var vm: GameLogic
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ZStack {
                 Image("chestbg\(vm.currentChest)")
@@ -13,10 +15,12 @@ struct ChestView: View {
                     .scaledToFill()
                     .ignoresSafeArea()
                     .scaleEffect(1.005)
+            
                 Image("logo\(vm.currentChest)")
                     .resizableToFit()
                     .frame(width: vm.size.width * 0.9)
                     .offset(y: -vm.size.height * 0.35)
+            
                 ZStack {
                     Image("chest\(vm.currentChest)")
                         .resizableToFit()
@@ -28,6 +32,7 @@ struct ChestView: View {
                 }
                 .frame(width: vm.size.width * 0.75)
                 .offset(y: -vm.size.height * 0.05)
+            
                 VStack {
                     Image("chestplank\(vm.currentChest)")
                         .resizableToFit()
@@ -42,12 +47,12 @@ struct ChestView: View {
                             .foregroundStyle(.white)
                             .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.25), radius: 2, y: 2)
                         }
+                    
                     Text("Swipe to change the game")
                         .foregroundStyle(.white)
                         .font(.custom(.bold, size: 25))
                         .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/.opacity(0.52), radius: 4, y: 4)
                         .padding()
-                       
                 }
                 .offset(y: vm.size.height * 0.2)
             
@@ -69,7 +74,9 @@ struct ChestView: View {
                         .opacity(vm.openChests[vm.currentChest - 1] ? 1 : 0.6)
                         .disabled(!vm.openChests[vm.currentChest - 1])
                 }
+                
                 Button {
+                    dismiss()
                 } label: {
                     Image("bluebtnbg")
                         .resizableToFit()
@@ -85,10 +92,37 @@ struct ChestView: View {
                 }
             }
             .offset(y: vm.size.height * 0.38)
-     
-       
         }
         .ignoresSafeArea()
+        .preferredColorScheme(.dark)
+        .navigationBarHidden(true)
+        .gesture(
+            DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
+            .onEnded { value in
+                switch(value.translation.width, value.translation.height) {
+                case (...0, -30...30):  
+                    if vm.currentChest == 4 {
+                        withAnimation {
+                            vm.currentChest = 1
+                        }
+                    } else {
+                        withAnimation {
+                            vm.currentChest += 1
+                        }
+                    }
+ 
+                    case (0..., -30...30):
+                    if vm.currentChest == 1 {
+                        vm.currentChest = 4
+                    } else {
+                        vm.currentChest -= 1
+                    }
+                    case (-100...100, ...0):  print("up swipe")
+                    case (-100...100, 0...):  print("down swipe")
+                    default:  print("no clue")
+                }
+            }
+        )
     }
 }
 

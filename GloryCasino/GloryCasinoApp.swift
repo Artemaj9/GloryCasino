@@ -1,8 +1,5 @@
 //
 //  GloryCasinoApp.swift
-//  GloryCasino
-//
-//  Created by Artem on 11.02.2024.
 //
 
 import SwiftUI
@@ -13,7 +10,7 @@ struct GloryCasinoApp: App {
     @StateObject var vm = GameLogic()
     var body: some Scene {
         WindowGroup {
-            EarthWin()
+            MenuView()
                 .environmentObject(vm)
         }
     }

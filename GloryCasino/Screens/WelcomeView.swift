@@ -9,22 +9,19 @@ struct WelcomeView: View {
     
     var body: some View {
         ZStack {
-          
-            Image("welcomebg\(vm.element)")
-               .resizable()
-               .scaledToFill()
-               .scaleEffect(1.005)
-            
-         
-            BackStartStack()
-                .environmentObject(vm)
-                .padding(.bottom, 24)
+                Image("welcomebg\(vm.element)")
+                    .resizable()
+                    .scaledToFill()
+                    .scaleEffect(1.005)
                 
+                BackStartStack()
+                    .environmentObject(vm)
+                    .padding(.bottom, 24)
         }
         .ignoresSafeArea()
         .preferredColorScheme(.dark)
         .navigationBarHidden(true)
-    }
+    }    
 }
 
 #Preview {

@@ -1,18 +1,39 @@
 //
 //  WonSpins.swift
-//  GloryCasino
-//
-//  Created by Artem on 15.02.2024.
 //
 
 import SwiftUI
 
 struct WonSpins: View {
+
+    @EnvironmentObject var vm: GameLogic
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("gamebg\(vm.element)")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+            
+            Color.black.opacity(0.2)
+                .ignoresSafeArea()
+
+            RaysDust()
+                .environmentObject(vm)
+            
+            Image("swonbg\(vm.element)")
+                .resizableToFit()
+            
+            Image("getbtn")
+                .resizableToFit()
+                .frame(height: 65)
+                .offset(y: vm.size.height * 0.35)
+            
+        }
     }
 }
 
 #Preview {
     WonSpins()
+        .environmentObject(GameLogic())
 }

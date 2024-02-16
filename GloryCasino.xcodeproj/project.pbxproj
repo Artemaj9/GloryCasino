@@ -21,6 +21,17 @@
 		AC2FCC9C2B7DEEB500A1A526 /* WaterQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */; };
 		AC2FCC9E2B7DF6BD00A1A526 /* WaterItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */; };
 		AC2FCCA02B7E3B8F00A1A526 /* AirQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCC9F2B7E3B8F00A1A526 /* AirQuest.swift */; };
+		AC2FCCA22B7E620600A1A526 /* WonSpins.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCA12B7E620600A1A526 /* WonSpins.swift */; };
+		AC2FCCA42B7E711A00A1A526 /* RaysDust.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCA32B7E711A00A1A526 /* RaysDust.swift */; };
+		AC2FCCC22B7EB2F400A1A526 /* AnyTransition+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCC12B7EB2F400A1A526 /* AnyTransition+ext.swift */; };
+		AC2FCCC42B7F637B00A1A526 /* EarthWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCC32B7F637B00A1A526 /* EarthWin.swift */; };
+		AC2FCCC62B7F69F900A1A526 /* FireWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCC52B7F69F900A1A526 /* FireWin.swift */; };
+		AC2FCCC82B7F709500A1A526 /* FireWinGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCC72B7F709500A1A526 /* FireWinGeometry.swift */; };
+		AC2FCCCA2B7F826400A1A526 /* WaterWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCC92B7F826400A1A526 /* WaterWin.swift */; };
+		AC2FCCCC2B7FA41F00A1A526 /* AirWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCCB2B7FA41F00A1A526 /* AirWin.swift */; };
+		AC2FCCCE2B7FB12700A1A526 /* ChestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCCD2B7FB12700A1A526 /* ChestView.swift */; };
+		AC2FCCD02B7FB9BB00A1A526 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC2FCCCF2B7FB9BB00A1A526 /* Inter-Bold.ttf */; };
+		AC2FCCD22B7FB9CB00A1A526 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC2FCCD12B7FB9CA00A1A526 /* Inter-Medium.ttf */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -51,6 +62,17 @@
 		AC2FCC9B2B7DEEB500A1A526 /* WaterQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterQuest.swift; sourceTree = "<group>"; };
 		AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterItems.swift; sourceTree = "<group>"; };
 		AC2FCC9F2B7E3B8F00A1A526 /* AirQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQuest.swift; sourceTree = "<group>"; };
+		AC2FCCA12B7E620600A1A526 /* WonSpins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonSpins.swift; sourceTree = "<group>"; };
+		AC2FCCA32B7E711A00A1A526 /* RaysDust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaysDust.swift; sourceTree = "<group>"; };
+		AC2FCCC12B7EB2F400A1A526 /* AnyTransition+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+ext.swift"; sourceTree = "<group>"; };
+		AC2FCCC32B7F637B00A1A526 /* EarthWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthWin.swift; sourceTree = "<group>"; };
+		AC2FCCC52B7F69F900A1A526 /* FireWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireWin.swift; sourceTree = "<group>"; };
+		AC2FCCC72B7F709500A1A526 /* FireWinGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireWinGeometry.swift; sourceTree = "<group>"; };
+		AC2FCCC92B7F826400A1A526 /* WaterWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWin.swift; sourceTree = "<group>"; };
+		AC2FCCCB2B7FA41F00A1A526 /* AirWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirWin.swift; sourceTree = "<group>"; };
+		AC2FCCCD2B7FB12700A1A526 /* ChestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestView.swift; sourceTree = "<group>"; };
+		AC2FCCCF2B7FB9BB00A1A526 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		AC2FCCD12B7FB9CA00A1A526 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +106,7 @@
 			children = (
 				AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */,
 				AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */,
+				AC2FCCC72B7F709500A1A526 /* FireWinGeometry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,8 +179,13 @@
 			isa = PBXGroup;
 			children = (
 				AC9D32DF2B7AA0060018ABF1 /* BackgroundView.swift */,
+				AC2FCCA32B7E711A00A1A526 /* RaysDust.swift */,
 				AC2FCC892B7C2BC100A1A526 /* PauseView.swift */,
 				AC2FCC832B7C0E1D00A1A526 /* BackStartStack.swift */,
+				AC2FCCC32B7F637B00A1A526 /* EarthWin.swift */,
+				AC2FCCC52B7F69F900A1A526 /* FireWin.swift */,
+				AC2FCCC92B7F826400A1A526 /* WaterWin.swift */,
+				AC2FCCCB2B7FA41F00A1A526 /* AirWin.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -172,6 +200,8 @@
 				AC2FCC872B7C25DF00A1A526 /* GameView.swift */,
 				AC2FCC8B2B7CE89800A1A526 /* LuminanceToAlpha.swift */,
 				AC2FCC8D2B7CEA9200A1A526 /* EndGameView.swift */,
+				AC2FCCA12B7E620600A1A526 /* WonSpins.swift */,
+				AC2FCCCD2B7FB12700A1A526 /* ChestView.swift */,
 				AC2FCC962B7D7C3C00A1A526 /* Quest */,
 			);
 			path = Screens;
@@ -181,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				AC9D32E82B7AACE00018ABF1 /* Image+ext.swift */,
+				AC2FCCC12B7EB2F400A1A526 /* AnyTransition+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,7 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				AC9D32EF2B7AAF550018ABF1 /* Inter-Black.ttf */,
+				AC2FCCCF2B7FB9BB00A1A526 /* Inter-Bold.ttf */,
 				AC9D32ED2B7AAF280018ABF1 /* Inter-SemiBold.ttf */,
+				AC2FCCD12B7FB9CA00A1A526 /* Inter-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -253,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9D32EE2B7AAF280018ABF1 /* Inter-SemiBold.ttf in Resources */,
+				AC2FCCD02B7FB9BB00A1A526 /* Inter-Bold.ttf in Resources */,
+				AC2FCCD22B7FB9CB00A1A526 /* Inter-Medium.ttf in Resources */,
 				AC9D32D42B7919080018ABF1 /* Preview Assets.xcassets in Resources */,
 				AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */,
 				AC9D32F02B7AAF550018ABF1 /* Inter-Black.ttf in Resources */,
@@ -274,19 +309,28 @@
 				AC2FCC902B7D215900A1A526 /* GameLogic.swift in Sources */,
 				AC2FCC982B7D7E2400A1A526 /* EarthQuest.swift in Sources */,
 				AC2FCC8A2B7C2BC100A1A526 /* PauseView.swift in Sources */,
+				AC2FCCC62B7F69F900A1A526 /* FireWin.swift in Sources */,
 				AC9D32E92B7AACE00018ABF1 /* Image+ext.swift in Sources */,
 				AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */,
 				AC2FCC8C2B7CE89800A1A526 /* LuminanceToAlpha.swift in Sources */,
+				AC2FCCCA2B7F826400A1A526 /* WaterWin.swift in Sources */,
 				AC9D32E32B7AA34A0018ABF1 /* Colors.swift in Sources */,
 				AC2FCCA02B7E3B8F00A1A526 /* AirQuest.swift in Sources */,
+				AC2FCCC42B7F637B00A1A526 /* EarthWin.swift in Sources */,
 				AC2FCC952B7D6B3700A1A526 /* EndGameModel.swift in Sources */,
 				AC9D32F32B7AC28E0018ABF1 /* MenuView.swift in Sources */,
+				AC2FCCC82B7F709500A1A526 /* FireWinGeometry.swift in Sources */,
 				AC9D32DC2B7927040018ABF1 /* Text.swift in Sources */,
 				AC2FCC862B7C0F8400A1A526 /* WelcomeView.swift in Sources */,
+				AC2FCCC22B7EB2F400A1A526 /* AnyTransition+ext.swift in Sources */,
 				AC9D32E02B7AA0060018ABF1 /* BackgroundView.swift in Sources */,
+				AC2FCCA22B7E620600A1A526 /* WonSpins.swift in Sources */,
 				AC9D32E62B7AAA780018ABF1 /* InfoView.swift in Sources */,
 				AC2FCC842B7C0E1D00A1A526 /* BackStartStack.swift in Sources */,
+				AC2FCCA42B7E711A00A1A526 /* RaysDust.swift in Sources */,
 				AC2FCC882B7C25DF00A1A526 /* GameView.swift in Sources */,
+				AC2FCCCE2B7FB12700A1A526 /* ChestView.swift in Sources */,
+				AC2FCCCC2B7FA41F00A1A526 /* AirWin.swift in Sources */,
 				AC2FCC9A2B7D8D9000A1A526 /* FireQuest.swift in Sources */,
 				AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */,
 			);

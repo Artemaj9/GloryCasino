@@ -9,8 +9,11 @@ struct BlurTransition: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .blur(radius: 10 * progress)
+            .blur(radius: 3 * progress)
+            //.saturation(1-progress)
             .opacity(1 - progress)
+          //  .hueRotation(Angle(degrees: 90*progress))
+            //.offset(x: -500*progress)
             .clipped()
     }
 }

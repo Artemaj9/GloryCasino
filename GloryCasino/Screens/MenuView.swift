@@ -12,6 +12,33 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             ZStack {
+//                if vm.element == 1 {
+//                    Image("menubg1")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .transition(.blur)
+//                }
+//                
+//                if vm.element == 2 {
+//                    Image("menubg2")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .transition(.blur)
+//                }
+//                    
+//                if vm.element == 3 {
+//                    Image("menubg3")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .transition(.blur)
+//                }
+//                
+//                if vm.element == 4 {
+//                    Image("menubg4")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .transition(.blur)
+//                }
                 Image("menubg\(vm.element)")
                     .resizable()
                     .scaledToFill()
@@ -25,7 +52,7 @@ struct MenuView: View {
                                 }
                         }
                     }
-                
+//                
                 VStack(spacing: 0) {
                     HStack {
                         NavigationLink {
@@ -58,7 +85,7 @@ struct MenuView: View {
                     
                     Image("logo\(vm.element)")
                         .resizableToFit()
-                        .frame(width: size.width * 0.4)
+                        .frame(width: vm.size.width * 0.4)
                     
                     HStack {
                         Spacer()
@@ -99,7 +126,7 @@ struct MenuView: View {
                     }
                     
                     Button {
-                        withAnimation {
+                        withAnimation(.easeInOut(duration: 1)) {
                             vm.element = 1
                         }
                    
@@ -117,7 +144,7 @@ struct MenuView: View {
                     }
 
                     Button {
-                        withAnimation {
+                        withAnimation(.easeInOut(duration: 1)) {
                             vm.element = 2
                         }
                   
@@ -135,7 +162,7 @@ struct MenuView: View {
                     }
                  
                     Button {
-                        withAnimation {
+                        withAnimation(.easeInOut(duration: 2)) {
                             vm.element = 3
                         }
                     } label: {
@@ -152,7 +179,7 @@ struct MenuView: View {
                     }
                
                     Button {
-                        withAnimation {
+                        withAnimation(.easeInOut(duration: 1)) {
                             vm.element = 4
                         }
                     } label: {

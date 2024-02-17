@@ -36,6 +36,8 @@
 		AC2FCCD62B7FD45200A1A526 /* TotalJackpotGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCD52B7FD45200A1A526 /* TotalJackpotGeo.swift */; };
 		AC2FCCDA2B8006DE00A1A526 /* TJText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCD92B8006DE00A1A526 /* TJText.swift */; };
 		AC2FCCDC2B80096800A1A526 /* KottoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC2FCCDB2B80096800A1A526 /* KottoSlab-Bold.ttf */; };
+		AC2FCCE22B80301300A1A526 /* SingleChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCE12B80301300A1A526 /* SingleChest.swift */; };
+		AC2FCCE52B80CFF000A1A526 /* PayoutLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FCCE42B80CFF000A1A526 /* PayoutLogic.swift */; };
 		AC9D32CD2B7919050018ABF1 /* GloryCasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */; };
 		AC9D32CF2B7919050018ABF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32CE2B7919050018ABF1 /* ContentView.swift */; };
 		AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32D02B7919070018ABF1 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		AC2FCCD52B7FD45200A1A526 /* TotalJackpotGeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalJackpotGeo.swift; sourceTree = "<group>"; };
 		AC2FCCD92B8006DE00A1A526 /* TJText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TJText.swift; sourceTree = "<group>"; };
 		AC2FCCDB2B80096800A1A526 /* KottoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KottoSlab-Bold.ttf"; sourceTree = "<group>"; };
+		AC2FCCE12B80301300A1A526 /* SingleChest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChest.swift; sourceTree = "<group>"; };
+		AC2FCCE42B80CFF000A1A526 /* PayoutLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayoutLogic.swift; sourceTree = "<group>"; };
 		AC9D32C92B7919050018ABF1 /* GloryCasino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloryCasino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9D32CC2B7919050018ABF1 /* GloryCasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloryCasinoApp.swift; sourceTree = "<group>"; };
 		AC9D32CE2B7919050018ABF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +135,14 @@
 			path = Quest;
 			sourceTree = "<group>";
 		};
+		AC2FCCE32B80CFCD00A1A526 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				AC2FCCE42B80CFF000A1A526 /* PayoutLogic.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		AC9D32C02B7919050018ABF1 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 				AC9D32CE2B7919050018ABF1 /* ContentView.swift */,
 				AC2FCC8F2B7D215800A1A526 /* GameLogic.swift */,
 				AC9D32E42B7AAA650018ABF1 /* Screens */,
+				AC2FCCE32B80CFCD00A1A526 /* Logic */,
 				AC9D32E12B7AA00A0018ABF1 /* Components */,
 				AC2FCC912B7D5EE700A1A526 /* Model */,
 				AC9D32DA2B7926F70018ABF1 /* Resources */,
@@ -188,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				AC9D32DF2B7AA0060018ABF1 /* BackgroundView.swift */,
+				AC2FCCE12B80301300A1A526 /* SingleChest.swift */,
 				AC2FCCD92B8006DE00A1A526 /* TJText.swift */,
 				AC2FCCA32B7E711A00A1A526 /* RaysDust.swift */,
 				AC2FCC892B7C2BC100A1A526 /* PauseView.swift */,
@@ -327,6 +341,7 @@
 				AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */,
 				AC2FCC8C2B7CE89800A1A526 /* LuminanceToAlpha.swift in Sources */,
 				AC2FCCCA2B7F826400A1A526 /* WaterWin.swift in Sources */,
+				AC2FCCE22B80301300A1A526 /* SingleChest.swift in Sources */,
 				AC9D32E32B7AA34A0018ABF1 /* Colors.swift in Sources */,
 				AC2FCCA02B7E3B8F00A1A526 /* AirQuest.swift in Sources */,
 				AC2FCCC42B7F637B00A1A526 /* EarthWin.swift in Sources */,
@@ -343,6 +358,7 @@
 				AC9D32E62B7AAA780018ABF1 /* InfoView.swift in Sources */,
 				AC2FCCDA2B8006DE00A1A526 /* TJText.swift in Sources */,
 				AC2FCC842B7C0E1D00A1A526 /* BackStartStack.swift in Sources */,
+				AC2FCCE52B80CFF000A1A526 /* PayoutLogic.swift in Sources */,
 				AC2FCCA42B7E711A00A1A526 /* RaysDust.swift in Sources */,
 				AC2FCC882B7C25DF00A1A526 /* GameView.swift in Sources */,
 				AC2FCCCE2B7FB12700A1A526 /* ChestView.swift in Sources */,

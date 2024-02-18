@@ -10,7 +10,7 @@ struct PauseView: View {
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.3).ignoresSafeArea()
+            Color.black.opacity(0.6).ignoresSafeArea()
             
             Image("pause")
                 .resizableToFit()
@@ -18,7 +18,9 @@ struct PauseView: View {
                 .overlay(alignment: .bottom) {
                     VStack {
                         Button {
-                            vm.isPaused = false
+                            withAnimation {
+                                vm.isPaused = false
+                            }
                         } label: {
                             Image("greenbtnbg")
                                 .resizableToFit()
@@ -41,7 +43,7 @@ struct PauseView: View {
                                 .resizableToFit()
                                 .frame(height: 58)
                                 .overlay {
-                                    Text(vm.isSound ? "SOUND: OFF" : "SOUND: ON")
+                                    Text(vm.isSound ? "SOUND: ON" : "SOUND: OFF")
                                         .foregroundStyle(.white)
                                         .font(.custom(.black, size: 27))
                                         .offset(y: -6)

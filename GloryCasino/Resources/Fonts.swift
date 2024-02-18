@@ -12,9 +12,7 @@ enum CustomFont: String {
     case semiBold = "Inter-SemiBold"
     case medium = "Inter-Medium"
     case regular = "unicode.revueb"
-  //  case revue = "unicode.revueb"
     case kotto = "KottoSlab-Bold"
-    
 }
 
 extension Font {

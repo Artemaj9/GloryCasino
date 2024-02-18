@@ -195,6 +195,7 @@ struct MenuView: View {
                 }
                 .padding(.bottom, 24)
             }
+            .preferredColorScheme(.dark)
             .ignoresSafeArea()
             .onAppear {
                 vm.nowDate = Date()

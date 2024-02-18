@@ -51,6 +51,9 @@ struct EarthWin: View {
                     .offset(y: 16)
                 }
             Button {
+                withAnimation {
+                    vm.showWinItem = false
+                }
                 
             } label: {
                 Image("getbtn")

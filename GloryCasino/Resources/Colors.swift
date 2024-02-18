@@ -17,3 +17,16 @@ enum Pallete {
     static let brownEarth = Color("brownearthtxt")
     static let brownAir = Color("brownairtxt")
 }
+
+
+let yellowGrad = LinearGradient(
+colors: [
+    Color("lightyellowgrad"),
+    Color("brightyellowgrad"),
+    Color("brightyellowgrad")
+],
+startPoint: .top,
+endPoint: .bottom
+)
+
+

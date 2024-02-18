@@ -72,7 +72,6 @@ struct EndGameView: View {
                             .font(.custom(.semiBold, size: vm.element < 3 ? 17 : 19))
                     }
                 
-                
                 Button {
                     
                 } label: {
@@ -92,8 +91,6 @@ struct EndGameView: View {
                 .padding(.top)
             }
             .padding(.bottom, 20)
-            
-            
         }
         .onAppear {
             radius = 70

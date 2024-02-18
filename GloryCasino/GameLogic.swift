@@ -8,7 +8,7 @@ import Combine
 class GameLogic: ObservableObject {
     
     @Published var size = CGSize(width: 393, height: 852)
-    @Published var element = 1  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
+    @Published var element = 4  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
     @Published var currentChest = 4
     @Published var isSound = true
     @Published var isPaused = false
@@ -20,8 +20,14 @@ class GameLogic: ObservableObject {
     @Published var nowDate = Date()
     @AppStorage("balance") var balance = 5000
     @Published var isGame = false
-    //@Published var balance = 5000
-    @Published var bet: Double = 500
+    
+    @Published var allItems = Array(repeating: Array(repeating: false, count: 8), count: 4)
+    
+    @Published var betlimit = [400, 400, 400, 400]
+
+    @Published var winItem = 0
+    @Published var showWinItem = false
+    @Published var showKey = false
     
     @Published var earthWinItem = 3
     @Published var fireWinItem = 4
@@ -35,7 +41,10 @@ class GameLogic: ObservableObject {
     @Published var fireJackpot = 0
     @Published var waterJackpot = 0
     @Published var airJackpot = 0
-    @Published var totalWin = [0, 0, 0, 0]
+    @Published var bet: Double = 500
+    @Published var winCoef = 1.5
+    @Published var totalWin = [2500, 3500, 4500, 5500]
+    @Published var jackpots = [50000, 50000, 50000, 50000]
     
     
     @Published var openChests = Array(repeating: false, count: 4)
@@ -243,6 +252,45 @@ class GameLogic: ObservableObject {
         if totalPayout > 0 && isSound {
             playSound(key: "win", player: &player2)
         }
+        
+        if totalPayout >= 500 && totalPayout < 1000 && !allItems[element-1][0] {
+            allItems[element-1][0] = true
+            winItem = 1
+            showWinItem = true
+        } else if totalPayout >= 1000 && totalPayout < 1500 && !allItems[element-1][1]{
+            allItems[element-1][1] = true
+            winItem = 2
+            showWinItem = true
+        } else if totalPayout >= 1500 && totalPayout < 2000 && !allItems[element-1][2]{
+            allItems[element-1][2] = true
+            winItem = 3
+            showWinItem = true
+        }  else if totalPayout >= 2000 && totalPayout < 2500 && !allItems[element-1][3] {
+            allItems[element-1][3] = true
+            winItem = 4
+            showWinItem = true
+        } else if totalPayout >= 2500 && totalPayout < 3000 && !allItems[element-1][4] {
+            allItems[element-1][4] = true
+            winItem = 5
+            showWinItem = true
+        } else if totalPayout >= 3000 && totalPayout < 4000 && !allItems[element-1][5] {
+            allItems[element-1][5] = true
+            winItem = 6
+            showWinItem = true
+        } else if totalPayout >= 4000 && totalPayout < 5000 && !allItems[element-1][6] {
+            allItems[element-1][6] = true
+            winItem = 7
+            showWinItem = true
+        } else if totalPayout >= 5000 && !allItems[element-1][7] {
+            allItems[element-1][7] = true
+            winItem = 8
+            showWinItem = true
+        }
+         
+//        if allItems[element-1].filter{ $0 == true }.count == 8 {
+//            showkey = true
+//        }
+            
         return totalPayout
     }
 }

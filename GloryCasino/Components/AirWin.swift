@@ -58,7 +58,9 @@ struct AirWin: View {
                 }
                 .offset(y: -vm.size.height*0.03)
             Button {
-                
+                withAnimation {
+                    vm.showWinItem = false
+                }
             } label: {
                 Image("getbtn")
                     .resizableToFit()

@@ -55,7 +55,9 @@ struct WaterWin: View {
                  
                 }
             Button {
-                
+                withAnimation {
+                    vm.showWinItem = false
+                }
             } label: {
                 Image("getbtn")
                     .resizableToFit()

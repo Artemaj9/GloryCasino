@@ -51,6 +51,10 @@
 		AC9D32EE2B7AAF280018ABF1 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32ED2B7AAF280018ABF1 /* Inter-SemiBold.ttf */; };
 		AC9D32F02B7AAF550018ABF1 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9D32EF2B7AAF550018ABF1 /* Inter-Black.ttf */; };
 		AC9D32F32B7AC28E0018ABF1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D32F22B7AC28E0018ABF1 /* MenuView.swift */; };
+		ACC81F9C2B814FEF002B15CB /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC81F9B2B814FEF002B15CB /* GameData.swift */; };
+		ACC81FA12B816BD1002B15CB /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC81FA02B816BD1002B15CB /* SoundPlayer.swift */; };
+		ACC81FA72B817112002B15CB /* slotsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACC81FA62B817112002B15CB /* slotsound.mp3 */; };
+		ACC81FA92B8177F6002B15CB /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACC81FA82B8177F6002B15CB /* win.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +104,10 @@
 		AC9D32EF2B7AAF550018ABF1 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		AC9D32F12B7AAF6D0018ABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AC9D32F22B7AC28E0018ABF1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		ACC81F9B2B814FEF002B15CB /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		ACC81FA02B816BD1002B15CB /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		ACC81FA62B817112002B15CB /* slotsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slotsound.mp3; sourceTree = "<group>"; };
+		ACC81FA82B8177F6002B15CB /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2FCC942B7D6B3700A1A526 /* EndGameModel.swift */,
+				ACC81F9B2B814FEF002B15CB /* GameData.swift */,
 				AC2FCCD52B7FD45200A1A526 /* TotalJackpotGeo.swift */,
 				AC2FCC9D2B7DF6BD00A1A526 /* WaterItems.swift */,
 				AC2FCCC72B7F709500A1A526 /* FireWinGeometry.swift */,
@@ -192,6 +201,7 @@
 				AC9D32DB2B7927040018ABF1 /* Text.swift */,
 				AC9D32EA2B7AAD6E0018ABF1 /* Fonts.swift */,
 				AC9D32E22B7AA34A0018ABF1 /* Colors.swift */,
+				ACC81F9F2B816AC4002B15CB /* Sounds */,
 				AC9D32EC2B7AAF030018ABF1 /* Fonts */,
 			);
 			path = Resources;
@@ -253,6 +263,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		ACC81F9F2B816AC4002B15CB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				ACC81FA62B817112002B15CB /* slotsound.mp3 */,
+				ACC81FA82B8177F6002B15CB /* win.mp3 */,
+				ACC81FA02B816BD1002B15CB /* SoundPlayer.swift */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,7 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9D32EE2B7AAF280018ABF1 /* Inter-SemiBold.ttf in Resources */,
+				ACC81FA92B8177F6002B15CB /* win.mp3 in Resources */,
 				AC2FCCD02B7FB9BB00A1A526 /* Inter-Bold.ttf in Resources */,
+				ACC81FA72B817112002B15CB /* slotsound.mp3 in Resources */,
 				AC2FCCD22B7FB9CB00A1A526 /* Inter-Medium.ttf in Resources */,
 				AC9D32D42B7919080018ABF1 /* Preview Assets.xcassets in Resources */,
 				AC9D32D12B7919070018ABF1 /* Assets.xcassets in Resources */,
@@ -339,7 +361,9 @@
 				AC2FCCC62B7F69F900A1A526 /* FireWin.swift in Sources */,
 				AC9D32E92B7AACE00018ABF1 /* Image+ext.swift in Sources */,
 				AC2FCC8E2B7CEA9200A1A526 /* EndGameView.swift in Sources */,
+				ACC81F9C2B814FEF002B15CB /* GameData.swift in Sources */,
 				AC2FCC8C2B7CE89800A1A526 /* LuminanceToAlpha.swift in Sources */,
+				ACC81FA12B816BD1002B15CB /* SoundPlayer.swift in Sources */,
 				AC2FCCCA2B7F826400A1A526 /* WaterWin.swift in Sources */,
 				AC2FCCE22B80301300A1A526 /* SingleChest.swift in Sources */,
 				AC9D32E32B7AA34A0018ABF1 /* Colors.swift in Sources */,

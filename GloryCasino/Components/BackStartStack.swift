@@ -46,7 +46,7 @@ struct BackStartStack: View {
                 }
             
                 Button {
-                    
+                    vm.isGame = true
                 } label: {
                     Image("greenbtnbg")
                         .resizableToFit()

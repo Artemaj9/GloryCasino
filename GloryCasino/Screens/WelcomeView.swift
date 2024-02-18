@@ -9,6 +9,7 @@ struct WelcomeView: View {
     
     var body: some View {
         ZStack {
+            if !vm.isGame {
                 Image("welcomebg\(vm.element)")
                     .resizable()
                     .scaledToFill()
@@ -17,6 +18,11 @@ struct WelcomeView: View {
                 BackStartStack()
                     .environmentObject(vm)
                     .padding(.bottom, 24)
+            } else {
+                GameView()
+                    .environmentObject(vm)
+                    .transition(.blur)
+            }
         }
         .ignoresSafeArea()
         .preferredColorScheme(.dark)

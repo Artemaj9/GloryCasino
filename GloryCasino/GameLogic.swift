@@ -8,16 +8,20 @@ import Combine
 class GameLogic: ObservableObject {
     
     @Published var size = CGSize(width: 393, height: 852)
-    @Published var element = 4  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
+    @Published var element = 1  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
     @Published var currentChest = 4
-    @Published var isSound = false
+    @Published var isSound = true
     @Published var isPaused = false
     @Published var earthItems = Array(Array(repeating: false, count: 8))
     @Published var fireItems = Array(Array(repeating: false, count: 8))
     @Published var waterItems = Array(Array(repeating: false, count: 8))
     @Published var airItems = Array(Array(repeating: false, count: 8))
-    
-    @Published var balance = 5000
+    @AppStorage("lastdate") var lastDate = Int(Date().timeIntervalSince1970)
+    @Published var nowDate = Date()
+    @AppStorage("balance") var balance = 5000
+    @Published var isGame = false
+    //@Published var balance = 5000
+    @Published var bet: Double = 500
     
     @Published var earthWinItem = 3
     @Published var fireWinItem = 4
@@ -31,12 +35,37 @@ class GameLogic: ObservableObject {
     @Published var fireJackpot = 0
     @Published var waterJackpot = 0
     @Published var airJackpot = 0
+    @Published var totalWin = [0, 0, 0, 0]
     
     
     @Published var openChests = Array(repeating: false, count: 4)
     @Published var openCount = Array(repeating: 0, count: 4)
     
+    // Slot Geometry
     @Published var newPosition: [CGFloat] = Array(repeating: 0, count: 5)
+    @Published var luckyHLines = [false, false, false]
+    @Published var luckyVlines = [false, false, false, false, false]
+    @Published var luckyVShapes = [false, false]
+    
+    
+    func resetLuckyLines() {
+        luckyHLines = [false, false, false]
+        luckyVlines = [false, false, false, false, false]
+        luckyVShapes = [false, false]
+    }
+    
+    func getBonus() {
+       
+        print("Last Date: \(lastDate)")
+        print("Now Date \(nowDate)")
+        let cData = Date(timeIntervalSince1970: TimeInterval(lastDate))
+        print("interval: \(Int(cData.timeIntervalSince(nowDate)))")
+        if abs(Int(cData.timeIntervalSince(nowDate))) > 86400 {
+            balance += 1000
+            print("balance updated!")
+            lastDate = Int(Date().timeIntervalSince1970)
+        }
+    }
     
     
 
@@ -45,15 +74,12 @@ class GameLogic: ObservableObject {
         for j in 0...4 {
             for i in 0...49 {
                 if isFirst || i < 47 {
-                    itemsMatrix[j][i] = randomNumber(probabilities: [0.2,1,1,1,1,1,1, 0.3, 0.3, 0.3]) + 1
+                    itemsMatrix[j][i] = randomNumber(probabilities: [0.5,0.8,1,1,2, 2.5, 2.5, 3, 3, 3]) + 1
                 }
             }
         }
         print(itemsMatrix)
     }
-    
-    
-    
     
     func itemToSumm(_ item: Int) -> Int {
         if item < 7 {
@@ -63,8 +89,6 @@ class GameLogic: ObservableObject {
         
         return 5000
     }
-    
-    
     
     func randomNumber(probabilities: [Double]) -> Int {
         let sum = probabilities.reduce(0, +)
@@ -78,5 +102,147 @@ class GameLogic: ObservableObject {
             }
         }
         return (probabilities.count - 1)
+    }
+
+    func calculatePayout() -> Int {
+        var totalPayout = 0
+        
+        
+        // Check V shapes in Matrix
+        // Check vertical lines
+        for i in 0..<5 {
+            let symbolsInLine = Set(currentMatrix[i])
+            for symbol in symbolsInLine {
+                
+                
+                
+                if currentMatrix[i].filter({ $0 == symbol }).count == 2 && symbol == 1 {
+                    
+                    print("Победитель по вертикали x2: \(symbol)! Вертикаль \(i)")
+                    luckyVlines[i] = true
+                    totalPayout +=  Int(0.5 * bet)
+                }
+                
+                if currentMatrix[i].filter({ $0 == symbol }).count == 3 { // Three of the
+                    
+                    print("Победитель по вертикали x3: \(symbol)! Вертикаль \(i)")
+                    luckyVlines[i] = true
+                    totalPayout +=  Int(payoutTable[symbol-1][0] * bet)
+                }
+            }
+        }
+        
+        // Check vertical lines
+        for j in 0..<3 {
+            var symbolsInLine: [Int] = []
+            for i in 0..<5 {
+                symbolsInLine.append(currentMatrix[i][j])
+            }
+            for symbol in Set(symbolsInLine) {
+                
+                if symbolsInLine.filter({ $0 == symbol }).count == 2 && symbol == 1 {
+                    totalPayout +=  Int(0.5 * bet)
+                    luckyHLines[j] = true
+                    print("Победитель по горизонтали x2: \(symbol)!  Горизонталь \(j)")
+                }
+                
+                if symbolsInLine.filter({ $0 == symbol }).count == 3 {
+                    totalPayout +=  Int(payoutTable[symbol-1][0] * bet)
+                    print("Победитель по горизонтали x3: \(symbol)!  Горизонталь \(j)")
+                }
+                
+                if symbolsInLine.filter({ $0 == symbol }).count == 4 {
+                    print("Победитель по горизонтали x4: \(symbol)!  Горизонталь \(j)")
+                    totalPayout +=  Int(payoutTable[symbol-1][1] * bet)
+                }
+                
+                if symbolsInLine.filter({ $0 == symbol }).count == 5 {
+                    print("Победитель по горизонтали x5: \(symbol)!  Горизонталь \(j)")
+                    totalPayout +=  Int(payoutTable[symbol-1][2] * bet)
+                }
+                
+                if symbolsInLine.filter({ $0 == symbol }).count >= 3 {
+                    luckyHLines[j] = true
+                }
+            }
+        }
+        
+      
+        var vShape: [Int] = []
+        for i in 0..<5 {
+            for j in 0..<3 {
+                if i<=2 && i == j {
+                    vShape.append(currentMatrix[i][j])
+                }
+                if i > 2 && (i+j == 4) {
+                    vShape.append(currentMatrix[i][j])
+                }
+            }
+        }
+        
+        print("Vshape: \(vShape)")
+                
+                for symbol in Set(vShape) {
+                    if vShape.filter({ $0 == symbol }).count == 3 { // Three of the same symbol in a line
+                        
+                            totalPayout +=  Int(payoutTable[symbol-1][0] * bet)
+                            
+                            print("Победитель по normal VShape x3: \(symbol)!")
+                        }
+                    
+                    if vShape.filter({ $0 == symbol }).count == 4 {
+                        print("Победитель по normal VShape x4: \(symbol)!")
+                        totalPayout +=  Int(payoutTable[symbol-1][1] * bet)
+                    }
+                    
+                    if vShape.filter({ $0 == symbol }).count == 5 || vShape.filter({ $0 == symbol }).count == 6 {
+                        print("Победитель по normal VShape x5: \(symbol)!")
+                        totalPayout +=  Int(payoutTable[symbol-1][2] * bet)
+                    }
+                    
+                    if vShape.filter({ $0 == symbol }).count >= 3 {
+                        luckyVShapes[0] = true
+                    }
+        }
+        
+        
+        var vShape2: [Int] = []
+        for i in 0..<5 {
+            for j in 0..<3 {
+                if i<=2 && i + j == 2 {
+                    vShape2.append(currentMatrix[i][j])
+                }
+                if i > 2 && abs(i-j) == 2 {
+                    vShape2.append(currentMatrix[i][j])
+                }
+            }
+        }
+        for symbol in Set(vShape2) {
+            if vShape2.filter({ $0 == symbol }).count == 3 { // Three of the
+                print("Победитель по new VShape x3: \(symbol)!")
+                totalPayout +=  Int(payoutTable[symbol-1][0] * bet)
+            }
+            
+            if vShape2.filter({ $0 == symbol }).count == 4 {
+                print("Победитель по new VShape x4: \(symbol)!")
+                totalPayout +=  Int(payoutTable[symbol-1][1] * bet)
+            }
+            
+            if vShape2.filter({ $0 == symbol }).count == 5 || vShape2.filter({ $0 == symbol }).count == 6 {
+                print("Победитель по newormal VShape x5: \(symbol)!")
+                totalPayout +=  Int(payoutTable[symbol-1][2] * bet)
+            }
+            
+            if vShape2.filter({ $0 == symbol }).count >= 3 {
+                luckyVShapes[1] = true
+            }
+}
+        
+        print("Total payout: \(totalPayout)")
+        
+        if totalPayout > 0 && isSound {
+            playSound(key: "win", player: &player2)
+        }
+        return totalPayout
     }
 }

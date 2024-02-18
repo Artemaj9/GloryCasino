@@ -10,7 +10,7 @@ struct GloryCasinoApp: App {
     @StateObject var vm = GameLogic()
     var body: some Scene {
         WindowGroup {
-            GameView()
+            MenuView()
                 .environmentObject(vm)
         }
     }

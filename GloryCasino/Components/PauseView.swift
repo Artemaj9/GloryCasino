@@ -8,7 +8,6 @@ struct PauseView: View {
     @EnvironmentObject var vm: GameLogic
     @Environment(\.dismiss) var dismiss
     
-    
     var body: some View {
         ZStack {
             Color.black.opacity(0.3).ignoresSafeArea()

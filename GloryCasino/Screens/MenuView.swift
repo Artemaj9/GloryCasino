@@ -106,8 +106,6 @@ struct MenuView: View {
                             .resizableToFit()
                             .frame(height: 15)
                     }
-                    
-                    //  Spacer()
                     NavigationLink {
                         WelcomeView()
                             .environmentObject(vm)
@@ -192,14 +190,16 @@ struct MenuView: View {
                                 .resizableToFit()
                                 .padding(.horizontal, 24)
                                 .opacity(vm.element == 4 ? 1 : 0)
-      
                         }
                     }
-
                 }
                 .padding(.bottom, 24)
             }
             .ignoresSafeArea()
+            .onAppear {
+                vm.nowDate = Date()
+                vm.getBonus()
+            }
         }
         .navigationViewStyle(.stack)
     }

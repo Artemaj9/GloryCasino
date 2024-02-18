@@ -9,6 +9,7 @@ struct EndGameView: View {
     @State var opacity: Double = 0
     @State var rotation: Double = 0
     @State var offsetY: CGFloat = 0
+    @Environment(\.dismiss) var dismiss
     
     @EnvironmentObject var vm: GameLogic
     
@@ -73,7 +74,7 @@ struct EndGameView: View {
                     }
                 
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Image("greenbtnbg")
                         .resizableToFit()

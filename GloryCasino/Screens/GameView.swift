@@ -48,8 +48,18 @@ struct GameView: View {
                         }
                     
                     NavigationLink {
-                        ChestView()
-                            .environmentObject(vm)
+                        switch vm.element {
+                        case 1: EarthQuest()
+                                .environmentObject(vm)
+                        case 2: FireQuest()
+                                .environmentObject(vm)
+                        case 3: WaterQuest()
+                                .environmentObject(vm)
+                        default: AirQuest()
+                                .environmentObject(vm)
+                        }
+                        //ChestView()
+                            
                     } label: {
                         Image("cup")
                             .resizableToFit()
@@ -517,7 +527,7 @@ struct GameView: View {
             }
             .offset(x: -vm.size.width * 0.02 ,y: -vm.size.height * 0.03)
             
-            if !vm.showWinItem {
+            if vm.showWinItem {
                 switch vm.element {
                 case 1: EarthWin()
                         .environmentObject(vm)
@@ -530,6 +540,11 @@ struct GameView: View {
                 }
             }
             
+            if vm.showkey {
+                EndGameView()
+                    .environmentObject(vm)
+            }
+            
             if vm.isPaused {
                 PauseView()
                     .environmentObject(vm)
@@ -538,6 +553,14 @@ struct GameView: View {
         }
         .onAppear {
             vm.fillItems(isFirst: true)
+            vm.allItems[0][1] = true
+            vm.allItems[0][2] = true
+            vm.allItems[0][3] = true
+            vm.allItems[0][4] = true
+            vm.allItems[0][5] = true
+            vm.allItems[0][6] = true
+            vm.allItems[0][7] = true
+            
         }
      
     }

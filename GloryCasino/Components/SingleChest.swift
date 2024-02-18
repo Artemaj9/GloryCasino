@@ -37,7 +37,7 @@ struct SingleChest: View {
                     .resizableToFit()
                     .overlay {
                         Group {
-                            Text("\(vm.openCount[chest - 1])")
+                            Text("\(vm.allItems[vm.currentChest - 1].filter{$0}.count)")
                                 .font(.custom(.black, size: 39))
                             +
                             Text("/8")

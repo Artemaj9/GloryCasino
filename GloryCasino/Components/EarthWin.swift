@@ -25,10 +25,10 @@ struct EarthWin: View {
                 .overlay {
                     VStack {
                         ZStack {
-                            Image("eitem\(vm.earthWinItem)")
+                            Image("eitem\(vm.winItem)")
                                 .resizableToFit()
                                 .opacity(opacity)
-                            Image("eopen\(vm.earthWinItem)")
+                            Image("eopen\(vm.winItem)")
                                 .resizableToFit()
                                 .scaleEffect(1.1)
                                 .opacity(1 - opacity)
@@ -41,7 +41,7 @@ struct EarthWin: View {
                             
                                 .font(.custom(.black, size: 18))
                             +
-                            Text("\(vm.itemToSumm(vm.earthWinItem))")
+                            Text("\(vm.itemToSumm(vm.winItem))")
                             
                                 .font(.custom(.black, size: 24))
                         }
@@ -53,6 +53,9 @@ struct EarthWin: View {
             Button {
                 withAnimation {
                     vm.showWinItem = false
+                    if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+                        vm.showkey = true
+                    }
                 }
                 
             } label: {

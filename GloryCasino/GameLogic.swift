@@ -27,7 +27,7 @@ class GameLogic: ObservableObject {
 
     @Published var winItem = 0
     @Published var showWinItem = false
-    @Published var showKey = false
+    @Published var showkey = false
     
     @Published var earthWinItem = 3
     @Published var fireWinItem = 4
@@ -287,10 +287,7 @@ class GameLogic: ObservableObject {
             showWinItem = true
         }
          
-//        if allItems[element-1].filter{ $0 == true }.count == 8 {
-//            showkey = true
-//        }
-            
+            balance += totalPayout
         return totalPayout
     }
 }

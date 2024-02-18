@@ -6,6 +6,8 @@ import SwiftUI
 
 struct AirQuest: View {
     @EnvironmentObject var vm: GameLogic
+    @Environment(\.dismiss) var dismiss
+
     
     var body: some View {
         ZStack {
@@ -153,13 +155,22 @@ struct AirQuest: View {
                     }
             }
             .offset(y: vm.size.height * 0.44)
+            
+            Button {
+                dismiss()
+            } label: {
+                Image("getbtn")
+                    .resizableToFit()
+                    .frame(width: vm.size.width * 0.4)
+            }
+            .offset(y: vm.size.height*0.4)
          
         }
         .onAppear {
-            vm.airItems[0] = true
-            vm.airItems[1] = true
-            vm.airItems[2] = true
-            vm.airItems[3] = true
+//            vm.airItems[0] = true
+//            vm.airItems[1] = true
+//            vm.airItems[2] = true
+//            vm.airItems[3] = true
         }
         
     }

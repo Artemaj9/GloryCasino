@@ -1,8 +1,5 @@
 //
 //  AirWin.swift
-//  GloryCasino
-//
-//  Created by Artem on 16.02.2024.
 //
 
 import SwiftUI

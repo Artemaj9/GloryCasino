@@ -54,6 +54,7 @@ struct PauseView: View {
                         
                         Button {
                             vm.isPaused = false
+                            vm.isGame = false
                             dismiss()
                         } label: {
                             Image("bluebtnbg")

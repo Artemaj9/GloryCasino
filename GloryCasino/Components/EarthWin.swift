@@ -54,7 +54,7 @@ struct EarthWin: View {
                 withAnimation {
                     vm.showWinItem = false
                     if vm.allItems[vm.element-1].filter{$0}.count == 8 {
-                        vm.showkey = true
+                        vm.showkey[0] = true
                     }
                 }
                 

@@ -22,14 +22,14 @@ struct FireWin: View {
                 .overlay {
                     VStack {
                         ZStack {
-                            Image("fwitem\(vm.earthWinItem)")
+                            Image("fwitem\(vm.winItem)")
                                 .resizableToFit()
                                 .opacity(opacity)
-                            Image("fwopen\(vm.fireWinItem)")
+                            Image("fwopen\(vm.winItem)")
                                 .resizableToFit()
-                                .scaleEffect(fwGeo[vm.fireWinItem - 1].scale)
+                                .scaleEffect(fwGeo[vm.winItem - 1].scale)
                                 .opacity(1 - opacity)
-                                .rotationEffect(Angle(degrees: fwGeo[vm.fireWinItem - 1].degrees))
+                                .rotationEffect(Angle(degrees: fwGeo[vm.winItem - 1].degrees))
 
                         }
                             .frame(height: vm.size.height*0.25)
@@ -38,7 +38,7 @@ struct FireWin: View {
                             
                                 .font(.custom(.black, size: 18))
                             +
-                            Text("\(vm.itemToSumm(vm.fireWinItem))")
+                            Text("\(vm.itemToSumm(vm.winItem))")
                             
                                 .font(.custom(.black, size: 24))
                         }
@@ -50,6 +50,9 @@ struct FireWin: View {
             Button {
                 withAnimation {
                     vm.showWinItem = false
+                    if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+                        vm.showkey[1] = true
+                    }
                 }
             } label: {
                 Image("getbtn")

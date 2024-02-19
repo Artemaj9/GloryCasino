@@ -31,10 +31,12 @@ struct WaterQuest: View {
                         ZStack {
                             Image("witem\(i)")
                                 .resizableToFit()
-                                .opacity(vm.waterItems[i-1] ? 0 : 1)
+                                .opacity(vm.allItems[2][i-1] ? 0 : 1)
+                                //.opacity(vm.waterItems[i-1] ? 0 : 1)
                             Image("wopen\(i)")
                                 .resizableToFit()
-                                .opacity(vm.waterItems[i-1] ? 1 : 0)
+                                .opacity(vm.allItems[2][i-1] ? 1 : 0)
+                               // .opacity(vm.waterItems[i-1] ? 1 : 0)
                             
                         }
                         .frame(width: vm.size.width * wGeo[i-1].width)
@@ -51,6 +53,19 @@ struct WaterQuest: View {
                     Image("waterlabelbg")
                         .resizableToFit()
                         .frame(width: vm.size.width * 0.5)
+                        .overlay {
+                            Group {
+                                Text("\(vm.allItems[vm.element-1].filter{$0}.count)")
+                                    .foregroundColor(.white)
+                                    .font(.custom(.black, size: 41))
+                                +
+                                Text("/8")
+                                    .font(.custom(.black, size: 27))
+                                    .foregroundColor(.white)
+                            }
+                            .shadow(color: .black.opacity(0.25), radius: 2, y: 2)
+                            .offset(y: -4)
+                        }
                         .offset(y: vm.size.height * 0.05)
                 }
                 .offset(y: vm.size.height*0.25)
@@ -63,7 +78,21 @@ struct WaterQuest: View {
                     .frame(width: vm.size.width * 0.4)
                     .offset(y: vm.size.height*0.4)
             }
+            
+            Button {
+                if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+                    vm.showkey[2] = true
+                }
+                dismiss()
+            } label: {
+                Image("backbtn")
+                    .resizableToFit()
+                    .frame(width: vm.size.width * 0.4)
+            }
+            .offset(y: vm.size.height*0.4)
         }
+        .preferredColorScheme(.dark)
+        .navigationBarHidden(true)
         .onAppear {
 
         }

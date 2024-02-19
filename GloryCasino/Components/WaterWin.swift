@@ -19,10 +19,10 @@ struct WaterWin: View {
                 .overlay {
                     VStack {
                         ZStack {
-                            Image("witem\(vm.waterWinItem)")
+                            Image("witem\(vm.winItem)")
                                 .resizableToFit()
                                 .opacity(opacity)
-                            Image("wopen\(vm.waterWinItem)")
+                            Image("wopen\(vm.winItem)")
                                 .resizableToFit()
                                 .opacity(1 - opacity)
 
@@ -42,7 +42,7 @@ struct WaterWin: View {
                                 
                                     .font(.custom(.black, size: 18))
                                 +
-                                Text("\(vm.itemToSumm(vm.waterWinItem))")
+                                Text("\(vm.itemToSumm(vm.winItem))")
                                 
                                     .font(.custom(.black, size: 24))
                             }
@@ -57,6 +57,9 @@ struct WaterWin: View {
             Button {
                 withAnimation {
                     vm.showWinItem = false
+                    if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+                        vm.showkey[2] = true
+                    }
                 }
             } label: {
                 Image("getbtn")

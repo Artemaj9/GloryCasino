@@ -98,6 +98,7 @@ struct EndGameView: View {
             opacity = 1
             rotation = 10
         }
+        .preferredColorScheme(.dark)
     }
 }
 

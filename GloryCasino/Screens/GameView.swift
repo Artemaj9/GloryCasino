@@ -115,7 +115,7 @@ struct GameView: View {
                     Spacer()
                     Image("mini\(vm.element)")
                         .resizableToFit()
-                        .frame(height: 40)
+                        .frame(height: 50)
                         .overlay(alignment: .bottom) {
                             ZStack {
                                 if vm.element == 4 {
@@ -127,15 +127,15 @@ struct GameView: View {
                                 .frame(height: 20)
                                 .mask {
                                     Text("\(Int(vm.bet * 0.2))")
-                                        .font(.custom(vm.element >= 3 ? .kotto : .semiBold, size: 14))
-                                        .offset(x: 8, y: -1)
+                                        .font(.custom(vm.element >= 3 ? .kotto : .semiBold, size: 16))
+                                        .offset(x: 8, y: -3)
                                 }
                             
                         }
                 }
                 
                 HStack {
-                    Image("pearth1")
+                    Image("pearth\(vm.freespinsLevel[vm.element-1])")
                         .resizableToFit()
                         .frame(height: 70)
                 }
@@ -340,7 +340,7 @@ struct GameView: View {
                             .overlay {
                              yellowGrad
                                     .mask {
-                                        Text("\(vm.totalWin[vm.element - 1])")
+                                        Text("\(vm.currentWin)")
                                             .font(.custom(.black, size: 24))
                                             
                                     }
@@ -389,12 +389,16 @@ struct GameView: View {
                             }
                             .overlay(alignment: .leading) {
                                 Button {
+                                    if vm.bet < 10 && vm.bet > 1 {
+                                        vm.bet -= 1
+                                    }
+                                    
                                     if vm.bet < 100 && vm.bet >= 10 {
                                         vm.bet -= 10
-                                        vm.balance += 10
+                                        //vm.balance += 10
                                     } else if vm.bet >= 100 {
                                         vm.bet -= 100
-                                        vm.balance += 100
+                                      //  vm.balance += 100
                                     }
                                 } label: {
                                     Image("minusbtn")
@@ -402,22 +406,31 @@ struct GameView: View {
                                         .frame(width: 28, height: 50)
                                         .offset(x: 4)
                                 }
+                                .disabled(vm.freespins[vm.element-1] > 0)
+                                .saturation(vm.freespins[vm.element-1] > 0 ? 0 : 1)
                             }
                             .overlay(alignment: .trailing) {
                                 Button {
                                     if vm.balance >= 100 {
-                                        vm.balance -= 100
-                                        vm.bet += 100
-                                    } else if vm.balance >= 10 && vm.balance < 100 {
-                                        vm.balance -= 10
+                                        if vm.betlimits[vm.element-1] >= Int(vm.bet) + 100 {
+                                        //    vm.balance -= 100
+                                            vm.bet += 100
+                                        }
+                                    } else if vm.balance >= 10 && vm.balance < 100 && vm.betlimits[vm.element-1] >= Int(vm.bet) + 10 {
+                                     //   vm.balance -= 10
                                         vm.bet += 10
-                                    }
+                                    } else if vm.bet < 10 && vm.bet >= 0 {
+                                            vm.bet += 1
+                                        }
                                 } label: {
                                     Image("plusbtn")
                                         .resizableToFit()
                                         .frame(width: 28, height: 50)
                                         .offset(x: -4)
                                 }
+                                .disabled(vm.freespins[vm.element-1] > 0)
+                                .saturation(vm.freespins[vm.element-1] > 0 ? 0 : 1)
+                                
                             }
                             .offset(y: -vm.size.height * 0.02)
                             .offset(x: 12)
@@ -426,7 +439,7 @@ struct GameView: View {
                         
                         Spacer()
                     }
-                    .offset(y: -vm.size.height * 0.01)
+                    .offset(y: -vm.size.height * 0.005)
                 }
                 .offset(y: vm.size.height * 0.4)
                
@@ -437,6 +450,13 @@ struct GameView: View {
                   Spacer()
                  
                     Button {
+                        if vm.freespins[vm.element - 1] == 0 {
+                            vm.balance -= Int(vm.bet)
+                            vm.jackpots[vm.element-1] += Int(vm.bet)
+                        } else {
+                            vm.freespins[vm.element - 1] -= 1
+                        }
+                        
                         if vm.isSound {
                             playSound(key: "slotsound", player: &player)
                         }
@@ -521,7 +541,7 @@ struct GameView: View {
                             }
                     }
                     .opacity(enabledSpin ? 1 : 0.5 )
-                    .disabled(!enabledSpin)
+                    .disabled(!enabledSpin ||  Int(vm.bet) > vm.balance)
                     .offset(y: -vm.size.height * 0.01)
                 }
             }
@@ -540,7 +560,12 @@ struct GameView: View {
                 }
             }
             
-            if vm.showkey {
+            if vm.wonSpins {
+                WonSpins()
+                    .environmentObject(vm)
+            }
+            
+            if vm.showkey[vm.element - 1] {
                 EndGameView()
                     .environmentObject(vm)
             }
@@ -553,13 +578,16 @@ struct GameView: View {
         }
         .onAppear {
             vm.fillItems(isFirst: true)
-            vm.allItems[0][1] = true
-            vm.allItems[0][2] = true
-            vm.allItems[0][3] = true
-            vm.allItems[0][4] = true
-            vm.allItems[0][5] = true
-            vm.allItems[0][6] = true
-            vm.allItems[0][7] = true
+            vm.bet = Double(min(vm.betlimits[vm.element - 1], vm.balance))
+           // vm.balance  -= vm.bet
+           // vm.allItems[0][0] = true
+            //vm.allItems[0][1] = true
+//            vm.allItems[0][2] = true
+//            vm.allItems[0][3] = true
+//            vm.allItems[0][4] = true
+//            vm.allItems[0][5] = true
+//            vm.allItems[0][6] = true
+          //  vm.allItems[0][7] = true
             
         }
      

@@ -26,11 +26,13 @@ struct AirQuest: View {
                     ZStack {
                         Image("aitem\(i)")
                             .resizableToFit()
-                            .opacity(vm.airItems[i-1] ? 0 : 1)
+                            .opacity(vm.allItems[3][i-1] ? 0 : 1)
+                         //   .opacity(vm.airItems[i-1] ? 0 : 1)
                         Image("aopen\(i)")
                             .resizableToFit()
                             .scaleEffect(0.9)
-                            .opacity(vm.airItems[i-1] ? 1 : 0)
+                            .opacity(vm.allItems[3][i-1] ? 1 : 0)
+                          //  .opacity(vm.airItems[i-1] ? 1 : 0)
                     }
                     .frame(width: vm.size.height * 0.16)
                     .offset(x: vm.size.width * aGeo[i-1].xCoef ,y: vm.size.height * aGeo[i-1].yCoef)
@@ -44,6 +46,19 @@ struct AirQuest: View {
                 Image("airpointsbg")
                     .resizableToFit()
                     .frame(width: vm.size.width * 0.35)
+                    .overlay {
+                        Group {
+                            Text("\(vm.allItems[vm.element-1].filter{$0}.count)")
+                                .foregroundColor(.white)
+                                .font(.custom(.black, size: 41))
+                            +
+                            Text("/8")
+                                .font(.custom(.black, size: 27))
+                                .foregroundColor(.white)
+                        }
+                        .shadow(color: .black.opacity(0.25), radius: 2, y: 2)
+                        .offset(y: -4)
+                    }
                     .offset(y: vm.size.height * 0.38)
             }
             .offset(y: -vm.size.height * 0.04)
@@ -140,6 +155,10 @@ struct AirQuest: View {
             
             Button {
             
+                if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+                    vm.showkey[0] = true
+                }
+                dismiss()
             } label: {
                 Image("greenbtnbg")
                     .resizableToFit()
@@ -156,22 +175,27 @@ struct AirQuest: View {
             }
             .offset(y: vm.size.height * 0.44)
             
-            Button {
-                dismiss()
-            } label: {
-                Image("getbtn")
-                    .resizableToFit()
-                    .frame(width: vm.size.width * 0.4)
-            }
-            .offset(y: vm.size.height*0.4)
+//            Button {
+//                if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+//                    vm.showkey[0] = true
+//                }
+//                dismiss()
+//            } label: {
+//                Image("backbtn")
+//                    .resizableToFit()
+//                    .frame(width: vm.size.width * 0.4)
+//            }
+//            .offset(y: vm.size.height*0.4)
          
         }
-        .onAppear {
+        .preferredColorScheme(.dark)
+        .navigationBarHidden(true)
+//        .onAppear {
 //            vm.airItems[0] = true
 //            vm.airItems[1] = true
 //            vm.airItems[2] = true
 //            vm.airItems[3] = true
-        }
+//        }
         
     }
 }

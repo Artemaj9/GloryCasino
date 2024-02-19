@@ -31,8 +31,9 @@ struct ChestView: View {
             VStack {
                 Button {
                     withAnimation {
-                        vm.openChests[vm.currentChest - 1] = true
+                        vm.showTotalJackpot[vm.currentChest - 1] = true
                     }
+                    
                 } label: {
                     Image("greenbtnbg")
                         .resizableToFit()
@@ -68,6 +69,12 @@ struct ChestView: View {
                 }
             }
             .offset(y: vm.size.height * 0.38)
+            
+            if vm.showTotalJackpot[vm.currentChest-1] {
+                TotalJackpot()
+                    .environmentObject(vm)
+                    .transition(.blur)
+            }
         }
         .ignoresSafeArea()
         .preferredColorScheme(.dark)
@@ -76,7 +83,7 @@ struct ChestView: View {
             DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
             .onEnded { value in
                 switch(value.translation.width, value.translation.height) {
-                case (...0, -30...30):  
+                case (...0, -50...50):
                     leftFlag = false
                     if vm.currentChest == 4 {
                         withAnimation {
@@ -88,7 +95,7 @@ struct ChestView: View {
                         }
                     }
  
-                    case (0..., -30...30):
+                    case (0..., -50...50):
                     leftFlag = true
                     if vm.currentChest == 1 {
                         withAnimation {
@@ -99,9 +106,9 @@ struct ChestView: View {
                             vm.currentChest -= 1
                         }
                     }
-                    case (-100...100, ...0):  print("up swipe")
-                    case (-100...100, 0...):  print("down swipe")
-                    default:  print("no clue")
+                   // case (-100...100, ...0):  print("up swipe")
+                    //case (-100...100, 0...):  print("down swipe")
+                    default:  print("")
                 }
             }
         )

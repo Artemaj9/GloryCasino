@@ -12,33 +12,6 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             ZStack {
-//                if vm.element == 1 {
-//                    Image("menubg1")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .transition(.blur)
-//                }
-//                
-//                if vm.element == 2 {
-//                    Image("menubg2")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .transition(.blur)
-//                }
-//                    
-//                if vm.element == 3 {
-//                    Image("menubg3")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .transition(.blur)
-//                }
-//                
-//                if vm.element == 4 {
-//                    Image("menubg4")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .transition(.blur)
-//                }
                 Image("menubg\(vm.element)")
                     .resizable()
                     .scaledToFill()
@@ -52,7 +25,7 @@ struct MenuView: View {
                                 }
                         }
                     }
-//                
+                
                 VStack(spacing: 0) {
                     HStack {
                         NavigationLink {
@@ -200,6 +173,14 @@ struct MenuView: View {
             .onAppear {
                 vm.nowDate = Date()
                 vm.getBonus()
+             //   vm.allItems[0][0] = true
+//                vm.allItems[0][1] = true
+//                vm.allItems[0][2] = true
+//                vm.allItems[0][3] = true
+//                vm.allItems[0][4] = true
+//                vm.allItems[0][5] = true
+//                vm.allItems[0][6] = true
+//                vm.allItems[0][7] = true
             }
         }
         .navigationViewStyle(.stack)

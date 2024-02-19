@@ -25,9 +25,9 @@ struct SingleChest: View {
                     .resizableToFit()
                     .opacity(vm.openChests[chest - 1] ? 0 : 1)
                 
-                Image("ochest\(chest)")
-                    .resizableToFit()
-                    .opacity(vm.openChests[vm.currentChest - 1] ? 1 : 0)
+//             //   Image("ochest\(chest)")
+//                    .resizableToFit()
+//                    .opacity(vm.openChests[vm.currentChest - 1] ? 1 : 0)
             }
             .frame(width: vm.size.width * 0.75)
             .offset(y: -vm.size.height * 0.05)

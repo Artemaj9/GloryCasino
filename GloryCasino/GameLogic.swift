@@ -9,7 +9,7 @@ class GameLogic: ObservableObject {
     
     @Published var size = CGSize(width: 393, height: 852)
     @Published var element = 4  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
-    @Published var currentChest = 4
+    @Published var currentChest = 3
     @Published var isSound = true
     @Published var isPaused = false
     @Published var earthItems = Array(Array(repeating: false, count: 8))
@@ -18,21 +18,24 @@ class GameLogic: ObservableObject {
     @Published var airItems = Array(Array(repeating: false, count: 8))
     @AppStorage("lastdate") var lastDate = Int(Date().timeIntervalSince1970)
     @Published var nowDate = Date()
-    @AppStorage("balance") var balance = 5000
+   /// @AppStorage("balance") var balance = 5000
+    @Published var balance = 10000
     @Published var isGame = false
+    
     
     @Published var allItems = Array(repeating: Array(repeating: false, count: 8), count: 4)
     
-    @Published var betlimit = [400, 400, 400, 400]
+    
 
     @Published var winItem = 0
     @Published var showWinItem = false
-    @Published var showkey = false
+    @Published var showkey = [false, false, false, false]
+    @Published var currentWin = 0
     
-    @Published var earthWinItem = 3
-    @Published var fireWinItem = 4
-    @Published var waterWinItem = 8
-    @Published var airWinItem = 7
+//    @Published var earthWinItem = 3
+//    @Published var fireWinItem = 4
+//    @Published var waterWinItem = 8
+//    @Published var airWinItem = 7
     
     @Published var itemsMatrix = Array(repeating: Array(repeating: 1, count: 50), count: 5)
     @Published var currentMatrix = Array(repeating: Array(repeating: 1, count: 3), count: 5)
@@ -41,10 +44,21 @@ class GameLogic: ObservableObject {
     @Published var fireJackpot = 0
     @Published var waterJackpot = 0
     @Published var airJackpot = 0
-    @Published var bet: Double = 500
-    @Published var winCoef = 1.5
-    @Published var totalWin = [2500, 3500, 4500, 5500]
-    @Published var jackpots = [50000, 50000, 50000, 50000]
+    @Published var bet: Double = 400
+    @Published var winCoef: Double = 1
+    @Published var totalWin = [0, 0, 0, 0]
+    
+    @Published var freespinsLevel = [0,0,0,0]
+    @Published var freespins = [0,0,0,0]
+    @Published var wonSpins = false
+    
+    
+    
+    //testing
+    @Published var jackpots = [0, 0, 0, 0]
+    @Published var showTotalJackpot = [false, false, false, false]
+    @Published var betlimits = [400, 400, 400, 400]
+
     
     
     @Published var openChests = Array(repeating: false, count: 4)
@@ -75,10 +89,7 @@ class GameLogic: ObservableObject {
             lastDate = Int(Date().timeIntervalSince1970)
         }
     }
-    
-    
 
-    
     func fillItems(isFirst: Bool) {
         for j in 0...4 {
             for i in 0...49 {
@@ -257,26 +268,32 @@ class GameLogic: ObservableObject {
             allItems[element-1][0] = true
             winItem = 1
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 500)
         } else if totalPayout >= 1000 && totalPayout < 1500 && !allItems[element-1][1]{
             allItems[element-1][1] = true
             winItem = 2
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 1000)
         } else if totalPayout >= 1500 && totalPayout < 2000 && !allItems[element-1][2]{
             allItems[element-1][2] = true
             winItem = 3
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 1500)
         }  else if totalPayout >= 2000 && totalPayout < 2500 && !allItems[element-1][3] {
             allItems[element-1][3] = true
             winItem = 4
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 2000)
         } else if totalPayout >= 2500 && totalPayout < 3000 && !allItems[element-1][4] {
             allItems[element-1][4] = true
             winItem = 5
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 3000)
         } else if totalPayout >= 3000 && totalPayout < 4000 && !allItems[element-1][5] {
             allItems[element-1][5] = true
             winItem = 6
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 4000)
         } else if totalPayout >= 4000 && totalPayout < 5000 && !allItems[element-1][6] {
             allItems[element-1][6] = true
             winItem = 7
@@ -285,9 +302,38 @@ class GameLogic: ObservableObject {
             allItems[element-1][7] = true
             winItem = 8
             showWinItem = true
+            betlimits[element-1] = max(betlimits[element-1], 5000)
+        }
+        
+       var freespinsSymbols = 0
+        for i in 0..<5 {
+            for j in 0..<3 {
+                if currentMatrix[i][j] == 1 || currentMatrix[i][j] == 2 {
+                    freespinsSymbols += 1
+                }
+            }
+        }
+        if totalPayout == 0 && freespinsSymbols >= 2 && !(freespins[element-1] > 0) {
+            if freespinsLevel[element - 1] != 4 {
+                freespinsLevel[element - 1] += 1
+                    winCoef = Double(freespinsLevel[element-1])
+
+            } else {
+                freespinsLevel[element - 1] = 1
+                winCoef = 1.5
+            }
+            freespins[element - 1] = freespinsLevel[element - 1] * 3
+            wonSpins = true
         }
          
-            balance += totalPayout
+            balance += Int(Double(totalPayout) * winCoef)
+            totalWin[element - 1] += Int(Double(totalPayout) * winCoef)
+        if totalPayout > 0 {
+            balance += Int(bet)
+           
+        }
+        
+        currentWin = totalPayout
         return totalPayout
     }
 }

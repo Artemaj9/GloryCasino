@@ -7,6 +7,7 @@ import SwiftUI
 struct AirWin: View {
     @EnvironmentObject var vm: GameLogic
     @State var opacity: Double = 1
+ 
     var body: some View {
         ZStack {
             Color.black.opacity(0.4)
@@ -19,10 +20,10 @@ struct AirWin: View {
                 .overlay {
                     VStack {
                         ZStack {
-                            Image("aitem\(vm.airWinItem)")
+                            Image("aitem\(vm.winItem)")
                                 .resizableToFit()
                                 .opacity(opacity)
-                            Image("aopen\(vm.airWinItem)")
+                            Image("aopen\(vm.winItem)")
                                 .resizableToFit()
                                 .opacity(1 - opacity)
                             
@@ -42,7 +43,7 @@ struct AirWin: View {
                                 
                                     .font(.custom(.black, size: 18))
                                 +
-                                Text("\(vm.itemToSumm(vm.airWinItem))")
+                                Text("\(vm.itemToSumm(vm.winItem))")
                                 
                                     .font(.custom(.black, size: 24))
                             }
@@ -57,6 +58,9 @@ struct AirWin: View {
             Button {
                 withAnimation {
                     vm.showWinItem = false
+                    if vm.allItems[vm.element-1].filter{$0}.count == 8 {
+                        vm.showkey[3] = true
+                    }
                 }
             } label: {
                 Image("getbtn")

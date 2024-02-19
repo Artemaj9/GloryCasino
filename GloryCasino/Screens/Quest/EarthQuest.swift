@@ -14,13 +14,27 @@ struct EarthQuest: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
-            Image("questtable\(vm.element)")
+            Image("questtable1")
                 .resizableToFit()
                 .overlay(alignment: .bottom) {
                     Image("questlabelbg1")
                         .resizableToFit()
                         .frame(height: 60)
+                        .overlay {
+                            Group {
+                                Text("\(vm.allItems[vm.element-1].filter{$0}.count)")
+                                    .foregroundColor(.white)
+                                    .font(.custom(.black, size: 41))
+                                +
+                                Text("/8")
+                                    .font(.custom(.black, size: 27))
+                                    .foregroundColor(.white)
+                            }
+                            .shadow(color: .black.opacity(0.25), radius: 2, y: 2)
+                            .offset(y: -4)
+                        }
                         .offset(y: 20)
+                        
                 }
                 .overlay {
                     VStack {
@@ -131,21 +145,22 @@ struct EarthQuest: View {
                         .offset(y: -24)
                     }
                     .offset(y: 34)
-                     
                 }
+                .offset(y: -vm.size.height * 0.06)
             Button {
                 if vm.allItems[vm.element-1].filter{$0}.count == 8 {
-                    vm.showkey = true
+                    vm.showkey[0] = true
                 }
                 dismiss()
             } label: {
-                Image("getbtn")
+                Image("backbtn")
                     .resizableToFit()
                     .frame(width: vm.size.width * 0.4)
             }
-            .offset(y: vm.size.height*0.4)
-            
+            .offset(y: vm.size.height*0.43)
         }
+        .preferredColorScheme(.dark)
+        .navigationBarHidden(true)
     }
 }
 

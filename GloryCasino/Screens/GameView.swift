@@ -127,8 +127,8 @@ struct GameView: View {
                                 .frame(height: 20)
                                 .mask {
                                     Text("\(Int(vm.bet * 0.2))")
-                                        .font(.custom(vm.element >= 3 ? .kotto : .semiBold, size: 16))
-                                        .offset(x: 8, y: -3)
+                                        .font(.custom(vm.element >= 3 ? .kotto : .semiBold, size: 14))
+                                        .offset(x: 8, y: -4)
                                 }
                             
                         }
@@ -308,24 +308,24 @@ struct GameView: View {
                 Image("bgslot\(vm.element)")
                     .resizableToFit()
             }
-            .offset(y: vm.size.height * 0.1)
+            .offset(y: vm.size.height * 0.11)
             
             Color.yellow.opacity(0.7)
                 .blur(radius: 5)
                 .frame(height:  9)
-                .offset(y: vm.size.height * 0.12 - 90)
+                .offset(y: vm.size.height * 0.13 - 90)
                 .opacity(vm.luckyHLines[2] ? 1 : 0)
             
             Color.yellow.opacity(0.7)
                 .blur(radius: 5)
                 .frame(height:  9)
-                .offset(y: vm.size.height * 0.12)
+                .offset(y: vm.size.height * 0.13)
                 .opacity(vm.luckyHLines[1] ? 1 : 0)
             
             Color.yellow.opacity(0.7)
                 .blur(radius: 5)
                 .frame(height:  9)
-                .offset(y: vm.size.height * 0.12 + 90)
+                .offset(y: vm.size.height * 0.13 + 90)
                 .opacity(vm.luckyHLines[0] ? 1 : 0)
             
             Image("gamebar")
@@ -441,7 +441,7 @@ struct GameView: View {
                     }
                     .offset(y: -vm.size.height * 0.005)
                 }
-                .offset(y: vm.size.height * 0.4)
+                .offset(y: vm.size.height * 0.41)
                
             
             VStack {

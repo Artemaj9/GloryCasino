@@ -8,7 +8,7 @@ import Combine
 class GameLogic: ObservableObject {
     
     @Published var size = CGSize(width: 393, height: 852)
-    @Published var element = 4  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
+    @Published var element = 1  // 1 -  Earth, 2 - Fire, 3 - Water, 4 - Air
     @Published var currentChest = 3
     @Published var isSound = true
     @Published var isPaused = false
@@ -32,10 +32,6 @@ class GameLogic: ObservableObject {
     @Published var showkey = [false, false, false, false]
     @Published var currentWin = 0
     
-//    @Published var earthWinItem = 3
-//    @Published var fireWinItem = 4
-//    @Published var waterWinItem = 8
-//    @Published var airWinItem = 7
     
     @Published var itemsMatrix = Array(repeating: Array(repeating: 1, count: 50), count: 5)
     @Published var currentMatrix = Array(repeating: Array(repeating: 1, count: 3), count: 5)
@@ -71,10 +67,18 @@ class GameLogic: ObservableObject {
     @Published var luckyVShapes = [false, false]
     
     
+    func toMenu() {
+        newPosition = Array(repeating: 0, count: 5)
+        luckyHLines = [false, false, false]
+        luckyVlines = [false, false, false, false, false]
+        luckyVShapes = [false, false]
+    }
+    
     func resetLuckyLines() {
         luckyHLines = [false, false, false]
         luckyVlines = [false, false, false, false, false]
         luckyVShapes = [false, false]
+        fillItems(isFirst: true)
     }
     
     func getBonus() {
@@ -316,7 +320,7 @@ class GameLogic: ObservableObject {
         if totalPayout == 0 && freespinsSymbols >= 2 && !(freespins[element-1] > 0) {
             if freespinsLevel[element - 1] != 4 {
                 freespinsLevel[element - 1] += 1
-                    winCoef = Double(freespinsLevel[element-1])
+                winCoef = max(1, Double(freespinsLevel[element-1])*0.5 + 1)
 
             } else {
                 freespinsLevel[element - 1] = 1
@@ -328,9 +332,8 @@ class GameLogic: ObservableObject {
          
             balance += Int(Double(totalPayout) * winCoef)
             totalWin[element - 1] += Int(Double(totalPayout) * winCoef)
-        if totalPayout > 0 {
+        if totalPayout > 0  && freespins[element - 1] == 0 {
             balance += Int(bet)
-           
         }
         
         currentWin = totalPayout
